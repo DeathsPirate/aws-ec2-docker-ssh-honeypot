@@ -20,14 +20,9 @@ RUN locale-gen en_GB.UTF-8
 RUN useradd -m admin -s /bin/bash
 
 RUN echo "admin:admin123" | chpasswd
-#RUN sed -ri 's/^LogLevel INFO/LogLevel DEBUG/' /etc/ssh/sshd_config
+
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/^#?PasswordAuthentication\s+.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
-# RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-#RUN echo "UsePAM yes" >> /etc/ssh/ssh_config
-#RUN echo "PasswordAuthentication yes" >> /etc/ssh/ssh_config
-#RUN echo "PermitRootLogin yes" >> /etc/ssh/ssh_config
 
 RUN mkdir /root/.ssh
 ADD ./hp/pwreveal.py  /lib/x86_64-linux-gnu/security/pwreveal.py
