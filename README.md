@@ -16,7 +16,7 @@ INSTALL
 
    `sudo su -`  
    `git clone https://github.com/DeathsPirate/aws-ec2-docker-ssh-honeypot.git`  
-   `cd cd aws-ec2-docker-ssh-honeypot/`  
+   `cd aws-ec2-docker-ssh-honeypot/`  
 
 ## 3. Run the setup script to install all scripts and services
 
