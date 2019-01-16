@@ -1,0 +1,11 @@
+[Unit]
+Description=Honeypot Monitoring Service
+After=multi-user.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/monitor.py
+
+
+[Install]
+WantedBy=default.target

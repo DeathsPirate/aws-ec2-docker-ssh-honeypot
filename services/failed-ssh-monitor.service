@@ -1,0 +1,10 @@
+[Unit]
+Description=Monitors Failed SSH Username Passwords
+After=multi-user.service
+Requires=docker.service
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/failed-monitor.sh
+
+[Install]
+WantedBy=default.target

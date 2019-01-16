@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitors commands run in the docker containers
+After=multi-user.service
+Requires=docker.service
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/command-monitor.sh
+
+[Install]
+WantedBy=default.target
+
