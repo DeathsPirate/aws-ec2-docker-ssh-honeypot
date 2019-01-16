@@ -36,7 +36,19 @@ INSTALL
    `service exec-commands-monitor status`  
    `service failed-ssh-monitor status`  
    `service hp-monitor status`  
+
+## 6. If the test passed and the log entries are there.
+
+   To start capturing live data you need to change the security group attached to your EC2 instance to allow port 22 from 0.0.0.0/0
    
+## 7. If required send logs to AWS CloudWatch using the CWL Agent.
+
+   Download the latest CWL Agent Wizard  
+   `curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O`  
+   Run it using `python3 ./awslogs-agent-setup.py --region us-east-1`  
+   Follow the prompts and send the logs to the right Log Groups (for more information see the accompanying blog post)
+   
+
 # Usage
 
 `ssh root@{ec2 instance IP or domain name}` default password is "password"  
