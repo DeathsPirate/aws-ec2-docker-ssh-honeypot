@@ -4,6 +4,15 @@
 INSTALL
 =======
 
+# Prerequisites
+
+- An AWS Account
+- An S3 bucket to store the modified docker containers in
+- CloudWatch Log Groups set up for DockerStart, FailedAttempts, and Commands logs
+- IAM User setup for the honeypot user.  
+- IAM Group for honeypot with honeypot user as a member of that group
+- IAM Policy for write access to the honeypot docker images S3 Bucket and CloudWatch Logs as above
+
 # Environment Setup
 
 ## 1. Create a new EC2 instance
@@ -24,7 +33,7 @@ INSTALL
 
 ## 4. Enter the API key and secret for the AWS account to run the honeypot under
 
-   You should create a dedicated user to run the honeypot under. Then add that user to a dedicated group that has policy permissions to write to s3 and cloudwatch logs.  For more information on this see the accompanying blog post.
+   You should use the API credentials for the user you created in the prerequisites.  For more information on this see the accompanying blog post.
 
 ## 5. Check that the system is working.
 
@@ -48,7 +57,6 @@ INSTALL
    Run it using `python3 ./awslogs-agent-setup.py --region us-east-1`  
    Follow the prompts and send the logs to the right Log Groups (for more information see the accompanying blog post)
    
-
 # Usage
 
 `ssh root@{ec2 instance IP or domain name}` default password is "password"  
