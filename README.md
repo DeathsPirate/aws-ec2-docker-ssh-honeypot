@@ -26,16 +26,21 @@ INSTALL
    `sudo su -`  
    `git clone https://github.com/DeathsPirate/aws-ec2-docker-ssh-honeypot.git`  
    `cd aws-ec2-docker-ssh-honeypot/`  
+   
+## 3. Add your S3 bucket name to the monitor.py script
 
-## 3. Run the setup script to install all scripts and services
+   On line 22 of the monitor.py script in the scripts folder, change the BUCKET name to reflect the S3 bucket name you setup in the prerequisites.
+   `sed -ri 's/BUCKET= "honeypot-docker-images"/BUCKET= "Whatever you called your s3 bucket"/' ./scripts/monitor.py`
+
+## 4. Run the setup script to install all scripts and services
 
    `./setup.sh`
 
-## 4. Enter the API key and secret for the AWS account to run the honeypot under
+## 5. Enter the API key and secret for the AWS account to run the honeypot under
 
    You should use the API credentials for the user you created in the prerequisites.  For more information on this see the accompanying blog post.
 
-## 5. Check that the system is working.
+## 6. Check that the system is working.
 
    `ssh root@{ec2 instance IP or domain name}` default password is `password` but try a couple of wrong passwords first!  
    Once you SSH in run a few commands then exit.  
@@ -46,11 +51,11 @@ INSTALL
    `service failed-ssh-monitor status`  
    `service hp-monitor status`  
 
-## 6. If the test passed and the log entries are there.
+## 7. If the test passed and the log entries are there.
 
    To start capturing live data you need to change the security group attached to your EC2 instance to allow port 22 from 0.0.0.0/0
    
-## 7. If required send logs to AWS CloudWatch using the CWL Agent.
+## 8. If required send logs to AWS CloudWatch using the CWL Agent.
 
    Download the latest CWL Agent Wizard  
    `curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O`  
