@@ -13,6 +13,8 @@ INSTALL
 - IAM Group for honeypot with honeypot user as a member of that group
 - IAM Policy for write access to the honeypot docker images S3 Bucket and CloudWatch Logs as above
 
+Installation instructions are in the wiki if needed. https://github.com/DeathsPirate/aws-ec2-docker-ssh-honeypot/wiki/Installation
+
 # Environment Setup
 
 ## 1. Create a new EC2 instance
