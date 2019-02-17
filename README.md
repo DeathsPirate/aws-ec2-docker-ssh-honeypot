@@ -40,7 +40,7 @@ Installation instructions are in the wiki if needed. https://github.com/DeathsPi
 
 ## 5. Enter the API key and secret for the AWS account to run the honeypot under
 
-   You should use the API credentials for the user you created in the prerequisites.  For more information on this see the accompanying blog post.
+   You should use the API credentials for the user you created in the prerequisites.  For more information on this see the wiki https://github.com/DeathsPirate/aws-ec2-docker-ssh-honeypot/wiki/Installation
 
 ## 6. Check that the system is working.
 
